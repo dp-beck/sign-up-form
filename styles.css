@@ -6,8 +6,8 @@
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -30,8 +30,13 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+html {
+	height: 100%;
+}
 body {
 	line-height: 1;
+	height: 100%;
+	display:flex;
 }
 
 ol, ul {
@@ -51,4 +56,105 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+@font-face {
+	font-family: ji-solid-balloon-caps;
+	src: url(JiSolidBalloonCaps-lddX.ttf);
+}
+#left-content {
+	background: center/cover url(background-img.webp);
+	flex: 1 1 33%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#left-content p {
+	color: darkred;
+	font-weight: 700;
+	margin-bottom: 25px;
+}
+
+#left-content #logo {
+	margin-top: 33%;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	width: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+}
+
+#logo h1 {
+	font-family: ji-solid-balloon-caps, sans-serif;
+	font-size: 4em;
+}
+
+#left-content img {
+	height: 5em;
+	filter: invert(1);
+}
+
+#right-content {
+	flex: 3 1 66%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10%;
+	background-color: #EEEEEE;
+}
+
+#right-content > * {
+	padding-left: 40px;
+}
+
+#right-content p, form h1 {
+	font-family:'Courier New', Courier, monospace;
+	font-size: 20px;
+	margin-right: 200px;
+}
+
+#form-not-button {
+	font-family:'Courier New', Courier, monospace;
+	font-size: 12px;
+	background-color: white;
+	width: 100%;
+	padding: 20px 0 20px 40px;
+	border-top: solid 1px lightgrey;
+	border-bottom: solid 1px lightgrey;
+	box-shadow: 0 8px 6px -6px grey;
+	margin-bottom: 40px;
+}
+
+form {
+	padding-left: 0 !important;
+}
+
+form h1 {
+	margin-bottom: 25px;
+}
+
+ul {
+	display: flex;
+	gap: 50px;
+}
+
+li {
+	display: flex;
+	flex-direction: column;	
+	margin-bottom: 25px;
+}
+
+button {
+	margin-left: 40px;
+	width: 150px;
+	height: 3em;
+	border-radius: 8px;
+	border: none;
+	background-color: #56961e;
+	color: white;
+	font-weight: 900;
 }

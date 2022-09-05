@@ -4,10 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Sign Up Form</title>
 </head>
 <body>
+    <div id="left-content">
+        <div id="logo"><img src="3757342-200.png" alt="icon of man floating with balloons"> 
+            <h1>BALLOONS</h1></div>
+        <p><strong>Photo from Pixabay</strong></p>
+    </div>
     
+    <div id="right-content">
+        <p>This is not a real online service!
+            You know you need something like this in your life
+            to help you realize your deepest dreams. Sign up <em>now</em>
+            to get started. <br><br>
+            You <em>know</em> you want to.
+        </p>
+
+        <form action="example.com/path" method="post">
+            <div id="form-not-button">
+                <h1>Let's do this!</h1>
+                <ul id="names">
+                 <li>
+                     <label for="first_name">FIRST NAME</label>
+                     <input type="text" id="first_name" name="first_name">
+                 </li>
+                 <li>
+                     <label for="last_name">LAST NAME</label>
+                     <input type="text" id="last_name" name="last_name">
+                  </li>
+             </ul>
+             <ul id="contact-info">
+                 <li>
+                     <label for="user_email">EMAIL</label>
+                     <input type="email" id="user_email" name="user_email">
+                 </li>
+                 <li>
+                     <label for="phone_number">PHONE NUMBER</label>
+                     <input type="tel" id="phone_number" name="phone_number">
+                 </li>
+             </ul>
+             <ul id="password">
+                 <li>
+                     <label for="user_password">PASSWORD</label>
+                     <input type="password" id="user_password" name="password">
+                 </li>
+                 <li>
+                     <label for="confirm_password">CONFIRM PASSWORD</label>
+                     <input type="password" id="confirm_password" name="confirm_password">
+                 </li>
+             </ul>
+            </div>
+            <button type="button">Create Account</button> 
+        </form>
+        <p>Already have an account? <a href="">Log in</a></p>
+    </div>    
 </body>
 </html>
