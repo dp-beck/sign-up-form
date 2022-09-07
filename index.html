@@ -27,18 +27,18 @@
                 <h1>Let's do this!</h1>
                 <ul id="names">
                  <li>
-                     <label for="first_name">FIRST NAME</label>
-                     <input type="text" id="first_name" name="first_name">
+                     <label for="first_name">*FIRST NAME</label>
+                     <input type="text" id="first_name" name="first_name" required>
                  </li>
                  <li>
-                     <label for="last_name">LAST NAME</label>
-                     <input type="text" id="last_name" name="last_name">
+                     <label for="last_name">*LAST NAME</label>
+                     <input type="text" id="last_name" name="last_name" required>
                   </li>
              </ul>
              <ul id="contact-info">
                  <li>
-                     <label for="user_email">EMAIL</label>
-                     <input type="email" id="user_email" name="user_email">
+                     <label for="user_email">*EMAIL</label>
+                     <input type="email" id="user_email" name="user_email" required>
                  </li>
                  <li>
                      <label for="phone_number">PHONE NUMBER</label>
@@ -47,18 +47,39 @@
              </ul>
              <ul id="password">
                  <li>
-                     <label for="user_password">PASSWORD</label>
-                     <input type="password" id="user_password" name="password">
+                     <label for="user_password">*PASSWORD</label>
+                     <input type="password" id="user_password" name="password" required minlength="8" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                  </li>
                  <li>
-                     <label for="confirm_password">CONFIRM PASSWORD</label>
-                     <input type="password" id="confirm_password" name="confirm_password">
+                     <label for="confirm_password">*CONFIRM PASSWORD</label>
+                     <input type="password" id="confirm_password" name="confirm_password" required  minlength="8">
                  </li>
              </ul>
             </div>
-            <button type="button">Create Account</button> 
+            <button type="submit">Create Account</button> 
         </form>
         <p>Already have an account? <a href="">Log in</a></p>
-    </div>    
+    </div>
+    <script>
+        const password = document.getElementById("user_password");
+        password.addEventListener('input', () => {
+            password.setCustomValidity('');
+            password.checkValidity();
+        });
+        
+        password.addEventListener('invalid', () => {
+            password.setCustomValidity("Your password must be at least 8 characters, have atleast one uppercase, one lowercase,  one numeric, and one special character.")
+        });
+
+        const confirmPassword = document.getElementById("confirm_password");
+        confirmPassword.addEventListener('input', () => {
+            confirmPassword.setCustomValidity('');
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.setCustomValidity("Your passwords need to match.");
+            };
+            confirmPassword.checkValidity();
+        })
+        
+    </script>
 </body>
 </html>

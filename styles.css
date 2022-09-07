@@ -104,7 +104,7 @@ table {
 	flex-direction: column;
 	justify-content: center;
 	gap: 10%;
-	background-color: #EEEEEE;
+	background-color: #F5F4F4;
 }
 
 #right-content > * {
@@ -157,4 +157,18 @@ button {
 	background-color: #56961e;
 	color: white;
 	font-weight: 900;
+}
+
+input {
+	border: solid 1px #E5E7EB;
+}
+
+input:focus {
+	outline: solid 1px blue;
+	box-shadow: 2px 2px 2px;
+}
+
+input:invalid {
+	outline: solid 1px red;
+	box-shadow: 2px 2px 2px;
 }
